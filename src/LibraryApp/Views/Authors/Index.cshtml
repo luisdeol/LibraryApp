@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Author>
+
+@{
+    ViewData["Title"] = "Authors Page";
+}
+
+<h3>@ViewData["Message"]</h3>
+
+
+<a asp-action="Create">Add Author</a>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var author in Model)
+    {
+        <tr>
+            <td>
+                @author.Id
+            </td>
+            <td>
+                @author.Name
+            </td>
+        </tr>
+    }
+</table>
