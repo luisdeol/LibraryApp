@@ -76,5 +76,15 @@ namespace LibraryApp.Controllers
                             b.Author.Name.Contains(searchQuery));
             return View("Index", books);
         }
+
+        public IActionResult Details(int id)
+        {
+            var book = _context.Books
+                .Include(b=> b.Author)
+                .Include(b=> b.Publisher)
+                .SingleOrDefault(b => b.Id == id);
+            ViewData["Message"] = string.Format("{0} Details", book.Title);
+            return View(book);
+        }
     }
 }

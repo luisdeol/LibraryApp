@@ -1,0 +1,24 @@
+﻿@model Book
+
+@{
+    ViewBag.Title = "Book Details";
+    Layout = "_Layout";
+}   
+
+<h2>@ViewData["Message"]</h2>
+
+<a asp-action="Index">Back to Books List</a>
+<div id="details">
+    <dl>
+        <dt>Title</dt>
+        <dd>@Model.Title</dd>
+        <dt>Publish Year</dt>
+        <dd>@Model.PublishYear</dd>
+        <dt>ISBN</dt>
+        <dd>@Model.Isbn</dd>
+        <dt>Publisher</dt>
+        <dd>@Model.Publisher.Name</dd>
+        <dt>Author</dt>
+        <dd>@Model.Author.Name</dd>
+    </dl>
+</div>
