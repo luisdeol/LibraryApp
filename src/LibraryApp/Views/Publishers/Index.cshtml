@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Publisher>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+<a asp-action="Create"></a>
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+    </tr>
+    @foreach (var publisher in Model)
+    {
+        <tr>
+            <td>
+                @publisher.Id
+            </td>
+            <td>
+                @publisher.Name
+            </td>
+        </tr>
+    }
+</table>
