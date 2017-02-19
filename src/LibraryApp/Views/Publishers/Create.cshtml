@@ -1,8 +1,6 @@
 ﻿@model Publisher
-
-
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Publisher";
     Layout = "_Layout";
 }
 
@@ -13,8 +11,7 @@
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" type="text"/>
-    </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-default form-control" />
+
+        <input type="submit" class="btn btn-default" value="Create" style="margin-top: 25px;"/>
     </div>
 </form>

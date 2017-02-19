@@ -1,16 +1,17 @@
 ﻿@model Author
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Author";
+    Layout = "_Layout";
 }
 
 
-<h3>@ViewData["Message"]</h3>
+<h2>@ViewData["Message"]</h2>
 
 <a asp-action="Index">Back to Authors</a>
 <form asp-controller="Authors" asp-action="Create" method="post">
     <div class="form-group">
         <label asp-for="Name">Name</label>
-        <input class="form-control" asp-for="Name" type="text" />
+        <input asp-for="Name" class="form-control"  type="text" />N
 
         <input type="submit" class="btn btn-default" value="Create" style="margin-top: 25px;"/>
     </div>

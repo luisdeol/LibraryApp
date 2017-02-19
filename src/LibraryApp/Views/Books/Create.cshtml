@@ -1,0 +1,37 @@
+﻿@model BookViewModel
+
+@{
+    ViewBag.Title = "Create Book";
+    Layout = "_Layout";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+<a asp-action="Index">Back to Books List</a>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" type="text" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="PublishYear"></label>
+        <input asp-for="PublishYear" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Isbn"></label>
+        <input asp-for="Isbn" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AuthorId"></label>
+        <select asp-for="AuthorId" asp-items="@Model.Authors" class="form-control">
+            <option>Please select one</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="PublisherId"></label>
+        <select asp-for="PublisherId" asp-items="@Model.Publishers" class="form-control">
+            <option>Please select one</option>
+        </select>
+    </div>
+    <input type="submit" value="Create" style="margin-top: 25px;"/>
+</form>
